@@ -1,0 +1,131 @@
+Problem No: 01
+Given two non-negative int values, return true if they have the same last digit, such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+ 
+lastDigit(7, 17) → true
+lastDigit(6, 17) → false   
+lastDigit(3, 113) → true
+ 
+Problem No: 02
+ Given one integer n and return true if it is an even number else return false.
+ Even(6) -> True.
+Even(7) -> False.
+Even(9) -> False. 
+
+ Problem no: 03
+Given two int values, return their sum. Unless the two values are the same, then return double their sum.
+ 
+sumDouble(1, 2) → 3
+sumDouble(3, 2) → 5
+sumDouble(2, 2) → 8
+ 
+Problem no: 04
+Given 2 ints, a and b, return true if one of them is 10 or if their sum is 10.
+ 
+makes10(9, 10) → true
+makes10(9, 9) → false
+makes10(1, 9) → true
+ 
+ Problem No: 05
+Given 2 int values, return true if either of them is in the range 10..20 inclusive.
+ 
+in1020(12, 99) → true
+in1020(21, 12) → true
+in1020(8, 99) → false
+
+Solutions:- 
+1)
+import java.util.Scanner;
+public class Main
+{ 
+ static boolean rem(int a, int b){
+     int ld1 = a % 10;
+     int ld2 = b % 10;
+     
+     return ld1 == ld2;
+ }
+public static void main(String[] args)
+{
+Scanner s=new Scanner(System.in);
+int x,y;
+x=s.nextInt();
+y=s.nextInt();
+boolean b=rem(x,y);
+System.out.println(b);
+}
+}
+
+2)
+import java.util.Scanner;
+public class Main
+{ 
+    static boolean evenodd(int x)
+{
+boolean r=(x%2==0)?(true):(false);
+return r;
+}
+public static void main(String[] args)
+{
+Scanner s=new Scanner(System.in);
+int x,y;
+x=s.nextInt();
+boolean b=evenodd(x);
+System.out.println(b);
+}
+}
+
+3)
+import java.util.Scanner;
+public class Main
+{ 
+    public static int sumDouble(int a, int b) {
+        int sum = a + b;
+        return sum + (a == b ? sum : 0);
+    }
+public static void main(String[] args)
+{
+Scanner s=new Scanner(System.in);
+int x,y;
+x=s.nextInt();
+y=s.nextInt();
+int res=sumDouble(x,y);
+System.out.println(res);
+}
+}
+
+4)
+import java.util.Scanner;
+public class Main
+{ 
+    public static boolean makes10(int a, int b) {
+        int c = a + b;
+        return (a == 10 || b == 10) || (c == 10);
+    }
+public static void main(String[] args)
+{
+Scanner s=new Scanner(System.in);
+int x,y;
+x=s.nextInt();
+y=s.nextInt();
+boolean res=makes10(x,y);
+System.out.println(res);
+}
+}
+
+5)
+import java.util.Scanner;
+public class Main
+{ 
+    public static boolean prgm(int a, int b) {
+        
+        return (a >= 10 && a <= 20) || (b >= 10 && b <= 20);
+    }
+public static void main(String[] args)
+{
+Scanner s=new Scanner(System.in);
+int x,y;
+x=s.nextInt();
+y=s.nextInt();
+boolean res=prgm(x,y);
+System.out.println(res);
+}
+}
